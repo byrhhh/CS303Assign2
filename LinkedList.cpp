@@ -8,7 +8,7 @@ namespace myNameSpace {
 template <typename T>
   
 void myLinkedList::push_front(const T& item){  //function to add a new node to the front of the list
-  head = new Node(item, NULL, head);  //creates a new node with the given item and the current head as its previous node
+  head = new myNode(item, NULL, head);  //creates a new node with the given item and the current head as its previous node
   //if list is empty
   if(tail == NULL)  //if the list is empty
     tail = head;
@@ -22,7 +22,7 @@ void myLinkedList::push_front(const T& item){  //function to add a new node to t
 
 void myLinkedList::push_back(const T&item) { //funtion to add a new node to the back of the list
   if(tail != NULL) {  //if the list is not empty
-    tail -> next = new Node(item, tail, NULL);  //creates a new node with the given item and the current tail as its next node
+    tail -> next = new myNode(item, tail, NULL);  //creates a new node with the given item and the current tail as its next node
     num_items++;
   }
   else { //if list is empty
@@ -106,14 +106,14 @@ void myLinkedList::insert(size_t index, const T& item) {
     return
     }
   
-  Node* current = head;
+  myNode* current = head;
   int position = 0;
 
   while(position < index - 1) {
       current = current -> next;
       position++;
     }
-  Node* new_node = new Node(item, current, current -> next);
+  myNode* new_node = new myNode(item, current, current -> next);
 
   
   num_items++;
