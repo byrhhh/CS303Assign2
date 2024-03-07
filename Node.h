@@ -11,16 +11,16 @@ template <typename T>
 
 
 //node class for each node in linked list
-class Node {
+class myNode {
 public:
   T data;
-  Node* head;
-  Node* tail;
-  Node* next;
+  myNode* head;
+  myNode* tail;
+  myNode* next;
 
 
 
-  Node (const T& data_item, Node* next_val = NULL): 
+  myNode (const T& data_item, Node* next_val = NULL): 
     data(data_item), next(next_val) {}
 
 };
@@ -32,8 +32,8 @@ class myLinkedList {
 private: 
 
 
-  Node<T>* head;
-  Node<T>* tail;
+  myNode<T>* head;
+  myNode<T>* tail;
   int num_items;
 
 public: //define functions for linked list
